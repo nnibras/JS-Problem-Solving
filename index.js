@@ -50,7 +50,38 @@ function findingBadData(array) {
   return count;
 }
 
-let arr = [-2, 3, 2, 3, 3, -9],
-  arr2 = [];
+// Problem 5
+function gemsToDiamond(num1, num2, num3) {
+  const totalOfNums = num1 + num2 + num3;
+  const typeNum1 = typeof num1,
+    typeNum2 = typeof num2,
+    typeNum3 = typeof num1;
+  if (
+    typeNum1 !== "number" ||
+    typeNum2 !== "number" ||
+    typeNum3 !== "number" ||
+    num1 < 0 ||
+    num2 < 0 ||
+    num3 < 0 ||
+    totalOfNums % 1 !== 0
+  )
+    return "Please enter 3 valid non empty positive integer value(s)";
+  const gemsConst1 = 21,
+    gemsConst2 = 32,
+    gemsConst3 = 43;
 
-console.log(findingBadData(arr2));
+  let diamond1 = gemsConst1 * num1,
+    diamond2 = gemsConst2 * num2,
+    diamond3 = gemsConst3 * num3;
+
+  totalDiamond = diamond1 + diamond2 + diamond3;
+
+  if (totalDiamond > 1000 * 2) return totalDiamond - 2000;
+  else return totalDiamond;
+}
+
+console.log(gemsToDiamond(1, 1, 1));
+console.log(findingBadData([-4, -9, -5, -33, -55]));
+console.log(isLGSeven(-15));
+console.log(evenOdd("Phero"));
+console.log(mindGame(33));
